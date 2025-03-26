@@ -27,7 +27,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <motion.a 
-                href="https://twitter.com" 
+                href="/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 whileHover={{ y: -3 }}
@@ -36,7 +36,7 @@ const Footer = () => {
                 <Twitter size={16} />
               </motion.a>
               <motion.a 
-                href="https://facebook.com" 
+                href="/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 whileHover={{ y: -3 }}
@@ -45,7 +45,7 @@ const Footer = () => {
                 <Facebook size={16} />
               </motion.a>
               <motion.a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/shivayan_enterprises/?utm_source=ig_web_button_share_sheet" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 whileHover={{ y: -3 }}
@@ -54,7 +54,7 @@ const Footer = () => {
                 <Instagram size={16} />
               </motion.a>
               <motion.a 
-                href="https://linkedin.com" 
+                href="/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 whileHover={{ y: -3 }}
@@ -126,17 +126,14 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-magic-gold mt-0.5 flex-shrink-0" />
-                <span className="text-magic-light/70">123 Magic Lane, Tech City, CA 94107</span>
-              </li>
+              
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-magic-gold flex-shrink-0" />
-                <span className="text-magic-light/70">+1 (555) 123-4567</span>
+                <span className="text-magic-light/70">+919699925064</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-magic-gold flex-shrink-0" />
-                <span className="text-magic-light/70">hello@shivayan.com</span>
+                <span className="text-magic-light/70">contact.Shivayan@gmail.com</span>
               </li>
             </ul>
           </div>
