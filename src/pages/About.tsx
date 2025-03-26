@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Users, Award, BookOpen, Briefcase, Lightbulb, Heart, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import tejas from "./assets/image.png";
-import prathmesh from "./assets/Image1.png";
+import tejas from "https://github.com/Serious03black/Shivayan_Enterprises/blob/main/src/pages/Assets/image1.png";
+import prathmesh from "
 const About = () => {
   // Scroll to top on mount
   useEffect(() => {
