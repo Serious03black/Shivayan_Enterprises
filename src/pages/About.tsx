@@ -5,7 +5,7 @@ import { Users, Award, BookOpen, Briefcase, Lightbulb, Heart, Sparkles } from 'l
 import { Button } from '@/components/ui/button';
 // import tejas from "https://github.com/Serious03black/Shivayan_Enterprises/blob/main/src/pages/Assets/image1.png";
 import tejas from "../Assets/image.png";
-import prathmesh from "../Assets/image1.png";
+import prathmesh from "../Assets/PicsArt_02-15-03.46.40.jpg";
 const About = () => {
   // Scroll to top on mount
   useEffect(() => {
