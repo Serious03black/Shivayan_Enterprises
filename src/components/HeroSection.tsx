@@ -1,13 +1,20 @@
-
-import React, { forwardRef, useEffect, useRef } from 'react';
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Wand2, Sparkles, ChevronRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Wand2, Sparkles, ChevronRight, X, Lightbulb, BarChart2, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
 const HeroSection = forwardRef<HTMLElement>((props, ref) => {
   const textRef = useRef<HTMLSpanElement>(null);
-  
+  const [showIdeaVisualizer, setShowIdeaVisualizer] = useState(false);
+  const [userIdea, setUserIdea] = useState('');
+  const [businessType, setBusinessType] = useState('');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [visualizationResult, setVisualizationResult] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
   // Text animation effect
   useEffect(() => {
     if (!textRef.current) return;
@@ -52,12 +59,195 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
     
     return () => clearTimeout(typeTimer);
   }, []);
-  
+
+  const handleVisualizeIdea = () => {
+    if (!userIdea.trim()) return;
+    
+    setIsLoading(true);
+    
+    // Simulate API call with timeout
+    setTimeout(() => {
+      // Generate mock visualization data based on the idea
+      const mockResults = {
+        implementation: [
+          `Responsive ${businessType || 'business'} platform with modern UI/UX`,
+          'AI-powered recommendation engine',
+          'Real-time analytics dashboard',
+          'Secure payment integration',
+          'Mobile app companion'
+        ],
+        benefits: [
+          `30-50% increase in ${businessType ? businessType + ' ' : ''}customer engagement`,
+          '20-40% reduction in operational costs',
+          '24/7 availability and global reach',
+          'Data-driven decision making',
+          'Competitive advantage in market'
+        ],
+        timeline: '8-12 weeks',
+        technologies: ['React/Next.js', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'AWS']
+      };
+      
+      setVisualizationResult(mockResults);
+      setIsLoading(false);
+    }, 2000);
+  };
+
+  const resetVisualizer = () => {
+    setUserIdea('');
+    setBusinessType('');
+    setVisualizationResult(null);
+  };
+
   return (
     <section 
       ref={ref}
       className="relative min-h-[90vh] flex items-center py-16 px-6 overflow-hidden"
     >
+      {/* Idea Visualizer Modal */}
+      <AnimatePresence>
+        {showIdeaVisualizer && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/70 backdrop-blur-md z-50 flex items-center justify-center p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.9, y: 50 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 50 }}
+              className="bg-magic-dark/90 backdrop-blur-lg border border-white/10 rounded-xl max-w-2xl w-full p-6 relative"
+            >
+              <button 
+                onClick={() => {
+                  setShowIdeaVisualizer(false);
+                  resetVisualizer();
+                }}
+                className="absolute top-4 right-4 text-white/50 hover:text-white"
+              >
+                <X size={24} />
+              </button>
+              
+              <div className="flex items-center gap-3 mb-6">
+                <Lightbulb className="text-magic-gold" size={28} />
+                <h2 className="text-2xl font-bold text-white">Idea Visualizer</h2>
+              </div>
+              
+              {!visualizationResult ? (
+                <>
+                  <p className="text-magic-light/80 mb-6">
+                    Describe your development idea and we'll show you how we can bring it to life and its potential business impact.
+                  </p>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-magic-light/70 mb-2">What type of business do you have?</label>
+                      <Input 
+                        value={businessType}
+                        onChange={(e) => setBusinessType(e.target.value)}
+                        placeholder="E.g. E-commerce, SaaS, Restaurant, etc."
+                        className="bg-white/5 border-white/10"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-magic-light/70 mb-2">Your idea or requirement</label>
+                      <Textarea 
+                        value={userIdea}
+                        onChange={(e) => setUserIdea(e.target.value)}
+                        placeholder="Describe what you want to build or improve..."
+                        rows={5}
+                        className="bg-white/5 border-white/10"
+                      />
+                    </div>
+                    
+                    <Button 
+                      onClick={handleVisualizeIdea}
+                      disabled={!userIdea.trim() || isLoading}
+                      className="mt-4 bg-magic-gold hover:bg-magic-gold/90 text-magic-dark"
+                    >
+                      {isLoading ? 'Visualizing...' : 'Visualize My Idea'}
+                    </Button>
+                  </div>
+                </>
+              ) : (
+                <div className="space-y-6">
+                  <div className="p-4 bg-magic-accent/10 border border-magic-accent/20 rounded-lg">
+                    <h3 className="text-lg font-semibold text-white mb-2">Your Idea:</h3>
+                    <p className="text-magic-light/90 italic">"{userIdea}"</p>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+                      <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-3">
+                        <Rocket className="text-magic-gold" size={20} />
+                        Implementation Plan
+                      </h3>
+                      <ul className="space-y-2">
+                        {visualizationResult.implementation.map((item, index) => (
+                          <li key={index} className="flex items-start gap-2 text-magic-light/90">
+                            <span className="text-magic-gold mt-1">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+                      <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-3">
+                        <BarChart2 className="text-magic-gold" size={20} />
+                        Business Impact
+                      </h3>
+                      <ul className="space-y-2">
+                        {visualizationResult.benefits.map((item, index) => (
+                          <li key={index} className="flex items-start gap-2 text-magic-light/90">
+                            <span className="text-magic-gold mt-1">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-4">
+                    <div className="bg-white/5 p-3 rounded-lg border border-white/10 flex-1 min-w-[200px]">
+                      <h4 className="text-sm text-magic-light/70 mb-1">Estimated Timeline</h4>
+                      <p className="text-white font-medium">{visualizationResult.timeline}</p>
+                    </div>
+                    
+                    <div className="bg-white/5 p-3 rounded-lg border border-white/10 flex-1 min-w-[200px]">
+                      <h4 className="text-sm text-magic-light/70 mb-1">Technologies</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {visualizationResult.technologies.map((tech, index) => (
+                          <span key={index} className="text-xs bg-magic-dark/50 text-magic-light px-2 py-1 rounded">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-3 pt-4">
+                    <Button 
+                      onClick={resetVisualizer}
+                      variant="outline"
+                      className="border-white/20 text-white"
+                    >
+                      Try Another Idea
+                    </Button>
+                    <Link to="/contact" onClick={() => setShowIdeaVisualizer(false)}>
+                      <Button className="bg-magic-gold hover:bg-magic-gold/90 text-magic-dark">
+                        Discuss Implementation
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Decorative elements */}
       <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-magic-accent/20 rounded-full filter blur-[100px] animate-pulse-subtle" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-magic-gold/10 rounded-full filter blur-[120px] animate-pulse-subtle" />
@@ -96,11 +286,13 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
                   <ChevronRight size={18} />
                 </Button>
               </Link>
-              <Link to="/services">
-                <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:text-white px-8 py-6 text-lg rounded-full">
-                  Our Services
-                </Button>
-              </Link>
+              <Button 
+                onClick={() => setShowIdeaVisualizer(true)}
+                variant="outline" 
+                className="border-white/20 text-red hover:bg-white/10 hover:green-white px-8 py-6 text-lg rounded-full"
+              >
+                Visualize Your Idea
+              </Button>
             </div>
             
             <div className="mt-12 flex items-center">
@@ -169,11 +361,12 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                      <Link to="/about">
-                        <Button className="bg-white/90 hover:bg-white text-magic-dark rounded-full">
-                          Learn More
-                        </Button>
-                      </Link>
+                      <Button 
+                        onClick={() => setShowIdeaVisualizer(true)}
+                        className="bg-white/90 hover:bg-white text-magic-dark rounded-full"
+                      >
+                        Visualize Your Idea
+                      </Button>
                     </motion.div>
                   </div>
                 </div>
