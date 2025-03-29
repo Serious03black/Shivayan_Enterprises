@@ -130,7 +130,7 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
   useEffect(() => {
     if (!dynamicTextRef.current) return;
 
-    const techTerms = ["Revolutionary", "Quantum Leap", "Neural Net", "Tech Horizon"];
+    const techTerms = ["Revolutionary", "DIGITAL", "LEGENDARY", "WEB GAINTS"];
     let termIndex = 0;
 
     const updateTerm = () => {
@@ -147,7 +147,7 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
   useEffect(() => {
     if (!quoteRef.current) return;
 
-    const phrases = ["Digital", "Connected", "Intelligent", "Automated"];
+    const phrases = ["WE BELIVE IN TECHNOLOGY", "WE BELIVE IN TRANSFORMATION", "WE BELIVE IN REVOLUTION ", "WE BELIVE IN FUTURE"];
     let currentIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
