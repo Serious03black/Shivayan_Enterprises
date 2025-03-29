@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
+/* Static H1 - Centered on Earth */
+.future-text {
+  font-family: 'Exo 2', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ffffff, #d1d5db); /* White to light gray */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: subtleFade 3s ease-in-out infinite;
+}
+
+@keyframes subtleFade {
+  0% {
+    opacity: 0.9;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    opacity: 0.9;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Dynamic H1 - Below Earth */
+.tech-text {
+  font-family: 'Exo 2', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ffffff, #9ca3af); /* White to gray */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: scaleFade 2s ease-in-out infinite;
+}
+
+@keyframes scaleFade {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+/* Dynamic Quotes - Below Dynamic H1 */
+.quote-text {
+  font-family: 'Exo 2', sans-serif;
+  letter-spacing: 1px;
+  color: #d1d5db; /* Light gray */
+  animation: gentleFade 3s ease-in-out infinite;
+}
+
+@keyframes gentleFade {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
