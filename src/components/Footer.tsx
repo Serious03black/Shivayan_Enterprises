@@ -26,7 +26,7 @@ const Footer = () => {
               Transforming ideas into magical digital experiences with cutting-edge web development solutions.
             </p>
             <div className="flex space-x-4">
-              <motion.a 
+              {/* <motion.a 
                 href="/" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -34,7 +34,7 @@ const Footer = () => {
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-magic-light hover:bg-white/20 transition-colors duration-300"
               >
                 <Twitter size={16} />
-              </motion.a>
+              </motion.a> */}
               <motion.a 
                 href="/" 
                 target="_blank" 
@@ -45,7 +45,7 @@ const Footer = () => {
                 <Facebook size={16} />
               </motion.a>
               <motion.a 
-                href="https://www.instagram.com/shivayan_enterprises/?utm_source=ig_web_button_share_sheet" 
+                href="https://www.instagram.com/shivayan.enterprises" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 whileHover={{ y: -3 }}
@@ -54,7 +54,7 @@ const Footer = () => {
                 <Instagram size={16} />
               </motion.a>
               <motion.a 
-                href="/" 
+                href="https://www.linkedin.com/company/106444127/admin/dashboard/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 whileHover={{ y: -3 }}
@@ -63,7 +63,7 @@ const Footer = () => {
                 <Linkedin size={16} />
               </motion.a>
               <motion.a 
-                href="https://github.com" 
+                href="https://github.com/shivayan_Enterprises" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 whileHover={{ y: -3 }}

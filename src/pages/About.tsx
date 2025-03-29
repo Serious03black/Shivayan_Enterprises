@@ -1,29 +1,32 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Users, Award, BookOpen, Briefcase, Lightbulb, Heart, Sparkles } from 'lucide-react';
+import { Users, Award, BookOpen, Briefcase, Lightbulb, Heart, Sparkles, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-// import tejas from "https://github.com/Serious03black/Shivayan_Enterprises/blob/main/src/pages/Assets/image1.png";
 import tejas from "../Assets/image.png";
 import prathmesh from "../Assets/PicsArt_02-15-03.46.40.jpg";
+
 const About = () => {
-  // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const team = [
     {
-      name: "The Prathmesh Uchit",
-      role: "Co Founder & CEO",
-      image:  prathmesh,
-      bio: "Prathmesh Uchit has over 10+ projects experience in web development and digital strategy, leading our team with vision and expertise."
+      name: "Prathmesh Uchit",
+      role: "Co-Founder & CEO",
+      image: prathmesh,
+      bio: "Technology visionary with expertise in full-stack development and digital transformation. Leads strategic direction and client relationships.",
+      linkedin: "https://www.linkedin.com/in/prathmesh-uchit-884a36222",
+      instagram: "https://www.instagram.com/the_serious_bleck"
     },
     {
-      name: "Mr. Tejas Surse",
-      role: "Co Founder & CTO",
+      name: "Tejas Surse",
+      role: "Co-Founder & CTO",
       image: tejas,
-      bio: "With a background in both design and development, Tejas oversees our creative process, ensuring beautiful and functional solutions."
+      bio: "Technical architect specializing in scalable solutions and innovative web technologies. Oversees all technical operations and R&D.",
+      linkedin: "https://www.linkedin.com/in/tejas-surse-a1b651256/",
+      instagram: "https://www.instagram.com/tejas_patil_0303"
     }
   ];
 
@@ -48,10 +51,10 @@ const About = () => {
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              The <span className="text-gradient">Wizards</span> Behind the Magic
+              The <span className="text-gradient">Visionaries</span> Behind the Innovation
             </h1>
             <p className="text-magic-light/80 text-lg md:text-xl mb-8">
-              We're a team of passionate digital craftspeople dedicated to creating extraordinary web experiences that help businesses grow.
+              We're a team of passionate technologists and creatives dedicated to building digital experiences that drive business transformation.
             </p>
           </motion.div>
         </div>
@@ -73,7 +76,7 @@ const About = () => {
               </div>
               <div className="glass-card rounded-3xl overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" 
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" 
                   alt="Our team collaborating" 
                   className="w-full h-auto object-cover"
                 />
@@ -90,16 +93,16 @@ const About = () => {
               viewport={{ once: true }}
             >
               <div className="inline-block px-3 py-1 rounded-full bg-magic-accent/10 mb-3">
-                <span className="text-magic-accent text-sm font-medium">Our Story</span>
+                <span className="text-magic-accent text-sm font-medium">Our Journey</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                From Small Beginnings to <span className="text-gradient">Digital Excellence</span>
+                From Concept to <span className="text-gradient">Industry Leadership</span>
               </h2>
               <p className="text-magic-light/80 text-lg mb-5">
-                Founded in 2015, MagicDev began with a simple mission: to create digital experiences that feel like magic. What started as a small team of passionate developers has grown into a full-service web consultancy.
+                Founded in 2023, Shivayan Enterprises began with a vision to bridge the gap between technology and business needs. What started as a two-person operation has grown into a respected digital solutions provider.
               </p>
               <p className="text-magic-light/80 text-lg mb-8">
-                Today, we work with clients across industries, from startups to Fortune 500 companies, bringing the same level of care, creativity, and technical excellence to every project we undertake.
+                Our approach combines technical excellence with business acumen, delivering solutions that not only look impressive but drive measurable results for our clients across various industries.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -109,7 +112,7 @@ const About = () => {
                     <h3 className="text-white font-semibold">Our Mission</h3>
                   </div>
                   <p className="text-magic-light/70 text-sm">
-                    To create digital experiences that transform businesses and delight users.
+                    To empower businesses through innovative technology solutions that create competitive advantages.
                   </p>
                 </div>
                 <div className="glass-dark p-5 rounded-xl">
@@ -118,7 +121,7 @@ const About = () => {
                     <h3 className="text-white font-semibold">Our Values</h3>
                   </div>
                   <p className="text-magic-light/70 text-sm">
-                    Excellence, innovation, integrity, and a relentless focus on the user experience.
+                    Integrity, innovation, client-centric approach, and relentless pursuit of excellence.
                   </p>
                 </div>
               </div>
@@ -132,10 +135,10 @@ const About = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { number: "500+", label: "Projects Completed" },
-              { number: "150+", label: "Happy Clients" },
-              { number: "15+", label: "Team Members" },
-              { number: "8+", label: "Years of Experience" }
+              { number: "10+", label: "Successful Projects" },
+              { number: "10+", label: "Satisfied Clients" },
+              { number: "8", label: "Technical Experts" },
+              { number: "100%", label: "Client Retention" }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -166,7 +169,7 @@ const About = () => {
             >
               <span className="text-magic-gold text-sm font-medium flex items-center justify-center">
                 <Users className="h-3.5 w-3.5 mr-1" />
-                Our Team
+                Leadership Team
               </span>
             </motion.div>
             <motion.h2
@@ -176,7 +179,7 @@ const About = () => {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
             >
-              Meet the <span className="text-gradient">Magicians</span>
+              Meet the <span className="text-gradient">Founders</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -185,11 +188,11 @@ const About = () => {
               viewport={{ once: true }}
               className="text-magic-light/80 text-lg max-w-2xl mx-auto"
             >
-              Our diverse team of experts is what makes the magic happen. Each member brings unique skills and perspectives to create extraordinary digital experiences.
+              Our leadership combines technical expertise with business strategy to deliver exceptional results.
             </motion.p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {team.map((member, index) => (
               <motion.div
                 key={index}
@@ -197,21 +200,43 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="glass-card rounded-xl overflow-hidden group"
+                whileHover={{ y: -10 }}
+                className="glass-card rounded-xl  group relative"
               >
-                <div className="relative">
+                <div className="relative h-85 border-b-2 border-magic-gold overflow-hidden rounded-t-xl">
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full overflow-hidden object-cover object-center  duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-magic-dark to-transparent opacity-60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t"></div>
+                  
+                  {/* Social Links */}
+                  <div className="absolute bottom-4 left-4 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <a 
+                      href={member.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="bg-magic-dark/80 hover:bg-linkedin-blue p-2 rounded-full transition-all duration-300 hover:scale-110"
+                      aria-label={`Connect with ${member.name} on LinkedIn`}
+                    >
+                      <Linkedin className="h-5 w-5 text-white" />
+                    </a>
+                    <a 
+                      href={member.instagram} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="bg-magic-dark/80 hover:bg-instagram-purple p-2 rounded-full transition-all duration-300 hover:scale-110"
+                      aria-label={`Follow ${member.name} on Instagram`}
+                    >
+                      <Instagram className="h-5 w-5 text-white" />
+                    </a>
+                  </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-white">{member.name}</h3>
+                  <h3 className="text-xl font-semibold text-white mb-1">{member.name}</h3>
                   <div className="text-magic-gold text-sm mb-3">{member.role}</div>
-                  <p className="text-magic-light/70 text-sm">{member.bio}</p>
+                  <p className="text-magic-light/80 text-sm">{member.bio}</p>
                 </div>
               </motion.div>
             ))}
@@ -234,7 +259,7 @@ const About = () => {
           >
             <span className="text-magic-gold text-sm font-medium flex items-center justify-center">
               <Sparkles className="h-3.5 w-3.5 mr-1" />
-              Work With Us
+              Let's Collaborate
             </span>
           </motion.div>
           
@@ -245,7 +270,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white mb-6"
           >
-            Ready to Create <span className="text-gradient-gold">Something Magical?</span>
+            Ready to <span className="text-gradient-gold">Transform Your Business?</span>
           </motion.h2>
           
           <motion.p
@@ -255,7 +280,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-magic-light/90 text-lg md:text-xl max-w-3xl mx-auto mb-10"
           >
-            Let's discuss how we can help transform your digital presence and achieve your business goals.
+            Schedule a consultation with our team to discuss how we can help you achieve your digital goals.
           </motion.p>
           
           <motion.div
@@ -265,8 +290,8 @@ const About = () => {
             viewport={{ once: true }}
           >
             <Link to="/contact">
-              <Button className="bg-magic-gold hover:bg-magic-gold/90 text-magic-dark px-8 py-6 text-lg rounded-full shadow-lg shadow-magic-gold/20">
-                Contact Us
+              <Button className="bg-magic-gold hover:bg-magic-gold/90 text-magic-dark px-8 py-6 text-lg font-medium rounded-full shadow-lg shadow-magic-gold/20 hover:shadow-xl hover:shadow-magic-gold/30 transition-all duration-300">
+                Get in Touch
               </Button>
             </Link>
           </motion.div>

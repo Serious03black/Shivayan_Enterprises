@@ -13,7 +13,7 @@ import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MagicBackground from "./components/MagicBackground";
-
+import OurWorkPage from "./pages/OurWorkPage"
 const queryClient = new QueryClient();
 
 // Scroll to top on route change
@@ -53,6 +53,7 @@ const AppContent = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/ourWorkPage" element={<OurWorkPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

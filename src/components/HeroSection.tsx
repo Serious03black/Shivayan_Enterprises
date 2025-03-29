@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -122,15 +123,13 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
   const [showIdeaVisualizer, setShowIdeaVisualizer] = useState(false);
   const [userIdea, setUserIdea] = useState('');
   const [businessType, setBusinessType] = useState('');
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [visualizationResult, setVisualizationResult] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Dynamic Tech Terms (changes every 10 seconds)
   useEffect(() => {
     if (!dynamicTextRef.current) return;
 
-    const techTerms = ["Revolutionary", "DIGITAL", "LEGENDARY", "WEB GAINTS"];
+    const techTerms = ["Revolutionary", "MAGICAL", "LEGENDARY", "FUTURISTIC", "INNOVATIVE", "GROWTH", "EXTRAORDINARY"];
     let termIndex = 0;
 
     const updateTerm = () => {
@@ -147,7 +146,7 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
   useEffect(() => {
     if (!quoteRef.current) return;
 
-    const phrases = ["WE BELIVE IN TECHNOLOGY", "WE BELIVE IN TRANSFORMATION", "WE BELIVE IN REVOLUTION ", "WE BELIVE IN FUTURE"];
+    const phrases = ["WE MEET NOT BY CHANCE IT BY FAITH", "WE BELIVE IN TRANSFORMATION", "WE BELIVE IN REVOLUTION ", "WE PROMISIS THE GROWTH"];
     let currentIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -156,7 +155,6 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
     const type = () => {
       const currentPhrase = phrases[currentIndex];
       const speed = isDeleting ? 50 : 150;
-
       if (isDeleting) {
         quoteRef.current!.textContent = currentPhrase.substring(0, charIndex - 1);
         charIndex--;
@@ -262,27 +260,39 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
           </motion.span>
 
           <p className="text-gray-300 text-xl md:text-2xl mt-10 mb-10 max-w-2xl">
-            We transform visionary ideas into Revolutionary digital experiences
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-blue-600/20 flex items-center gap-2">
-                <Zap className="h-5 w-5" />
-                <span>Start Building</span>
-              </Button>
-            </Link>
-            <Button
-              onClick={() => setShowIdeaVisualizer(true)}
-              variant="outline"
-              className="border-gray-500 text-black hover:bg-gray-700/50 px-8 py-6 text-lg rounded-full"
-            >
-              <Lightbulb className="h-5 w-5 mr-2" />
-              Visualize Your Idea
-            </Button>
-          </div>
+            We transform visionary ideas into Revolutionary Growth
+          </p>   
+<div className="flex flex-col sm:flex-row gap-4 justify-center">
+  <Link to="/contact">
+    <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-blue-600/20 flex items-center gap-2">
+      <Zap className="h-5 w-5" />
+      <span>Start Building</span>
+    </Button>
+  </Link>
+  <Button
+    onClick={() => setShowIdeaVisualizer(true)}
+    variant="outline"
+    className="border-gray-500 text-black hover:bg-gray-700/50 px-8 py-6 text-lg rounded-full"
+  >
+    <Lightbulb className="h-5 w-5 mr-2" />
+    Visualize Your Idea
+  </Button>
+  <Link to="/ourWorkPage">
+    <Button 
+      variant="ghost" 
+      className="
+      text-white px-8 py-6 text-lg rounded-full
+      border border-gray-600/50 hover:border-indigo-400/50
+      bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800
+      hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-700
+      transform hover:scale-[1.02] transition-all duration-300
+      shadow-lg hover:shadow-indigo-500/30">
+      <Rocket className="h-5 w-5 mr-2" />
+      View Our Work
+    </Button>
+  </Link>
+</div>
         </motion.div>
-
         {/* Tech feature grid */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -346,7 +356,7 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
               {!visualizationResult ? (
                 <>
                   <p className="text-gray-300 mb-6">
-                    Describe your idea and we'll visualize its future potential with cutting-edge technology.
+                    Describe your idea and we'll visualize its future potential technology.
                   </p>
                   <div className="space-y-4">
                     <div>
