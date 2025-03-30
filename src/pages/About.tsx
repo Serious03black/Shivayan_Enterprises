@@ -21,7 +21,7 @@ const About = () => {
       instagram: "https://www.instagram.com/tejas_patil_0303"
     },
     {
-      name: "Prathmesh S Uchit",
+      name: "The Prathmesh S Uchit",
       role: "Co-Founder & CEO",
       image: prathmesh,
       bio: "Technology visionary with expertise in full-stack development and digital transformation. Leads strategic direction and client relationships.",
