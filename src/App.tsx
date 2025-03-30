@@ -14,6 +14,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MagicBackground from "./components/MagicBackground";
 import OurWorkPage from "./pages/OurWorkPage"
+import { Analytics } from "@vercel/analytics/react"
 const queryClient = new QueryClient();
 
 // Scroll to top on route change

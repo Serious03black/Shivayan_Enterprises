@@ -6,7 +6,7 @@ import ThreeScene from '../components/ThreeScene';
 import HeroSection from '../components/HeroSection';
 import ServicesSection from '../components/ServicesSection';
 import { Button } from '@/components/ui/button';
-
+import { Analytics } from "@vercel/analytics/react"
 const Index = () => {
   const sectionRefs = {
     hero: useRef<HTMLElement>(null),
@@ -157,14 +157,14 @@ const Index = () => {
       {/* 3D Showcase Section */}
       <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
+          <div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
             <div className="inline-block px-3 py-1 rounded-full bg-magic-accent/10 mb-3">
               <span className="text-magic-accent text-sm font-medium flex items-center">
-                <Sparkles className="h-3.5 w-3.5 mr-1" />
+                <h1 className="h-3.5 w-3.5 mr-1" />
                 Interactive Experiences
               </span>
             </div>
@@ -197,16 +197,9 @@ const Index = () => {
                 </Button>
               </Link>
             </div>
-          </motion.div>
+          </div>
           
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            className="h-[400px] md:h-[500px] rounded-xl overflow-hidden bg-magic-dark/50 backdrop-blur-sm border border-white/10"
-          >
-            <ThreeScene />
-          </motion.div>
+          
         </div>
       </section>
       
@@ -219,7 +212,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-magic-accent/20 via-transparent to-magic-gold/10" />
         
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -229,27 +222,27 @@ const Index = () => {
               <Sparkles className="h-3.5 w-3.5 mr-1" />
               Ready to Transform Your Digital Presence?
             </span>
-          </motion.div>
+          </div>
           
-          <motion.h2
+          <h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
           >
             Let's Create <span className="text-gradient-gold">Magic</span> Together
-          </motion.h2>
+          </h2>
           
-          <motion.p
+          <p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-magic-light/90 text-lg md:text-xl max-w-3xl mx-auto mb-10"
           >
             Transform your ideas into extraordinary digital experiences with our magical web development solutions.
-          </motion.p>
+          </p>
           
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -265,7 +258,7 @@ const Index = () => {
                 Explore Services
               </Button>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

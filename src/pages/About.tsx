@@ -38,7 +38,7 @@ const About = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-magic-gold/10 rounded-full filter blur-[120px] animate-pulse-subtle" />
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -56,7 +56,7 @@ const About = () => {
             <p className="text-magic-light/80 text-lg md:text-xl mb-8">
               We're a team of passionate technologists and creatives dedicated to building digital experiences that drive business transformation.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
       
@@ -64,7 +64,7 @@ const About = () => {
       <section className="py-16 md:py-24 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
+            <div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
@@ -84,7 +84,7 @@ const About = () => {
               <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-magic-accent/20 rounded-full flex items-center justify-center z-10">
                 <Lightbulb className="w-6 h-6 text-magic-accent" />
               </div>
-            </motion.div>
+            </div>
             
             <motion.div
               initial={{ opacity: 0, x: 30 }}

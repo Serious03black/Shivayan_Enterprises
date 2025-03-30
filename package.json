@@ -43,6 +43,7 @@
     "@react-three/fiber": "^8.15.16",
     "@tanstack/react-query": "^5.56.2",
     "@types/three": "^0.156.0",
+    "@vercel/analytics": "^1.5.0",
     "animejs": "^3.2.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
