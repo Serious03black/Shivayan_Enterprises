@@ -35,11 +35,11 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0  rounded-full shadow-lg left-0 right-0 z-50  transition-all duration-500 ${
+      className={`fixed top-0  rounded-full left-0 right-0 z-50  transition-all duration-500 ${
         isScrolled ? "py-3" : "py-5"
       }`}
     >
-      <div className={`mx-auto max-w-7xl glass rounded-full shadow-lg} border border-white/20 transition-all duration-500`}>
+      <div className={`mx-auto max-w-7xl glass rounded-full border border-white/20 transition-all duration-500`}>
         <div className="flex items-center justify-between px-4 md:px-8 py-3">
           <Link 
             to="/"
