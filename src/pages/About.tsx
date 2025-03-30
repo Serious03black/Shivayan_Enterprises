@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-// import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Users, Award, BookOpen, Briefcase, Lightbulb, Heart, Sparkles, Linkedin, Instagram } from 'lucide-react';
+import { Users, Award, BookOpen, Lightbulb, Heart, Sparkles, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import tejas from "../Assets/image.png";
 import prathmesh from "../Assets/prathmesh.jpg";
+import Gauri from "../Assets/gauri.jpg";
 
 const About = () => {
   useEffect(() => {
@@ -13,7 +13,15 @@ const About = () => {
 
   const team = [
     {
-      name: "Prathmesh Uchit",
+      name: "Tejas S Surse",
+      role: "Co-Founder & CTO",
+      image: tejas,
+      bio: "Technical architect specializing in scalable solutions and innovative web technologies. Oversees all technical operations and R&D.",
+      linkedin: "https://www.linkedin.com/in/tejas-surse-a1b651256/",
+      instagram: "https://www.instagram.com/tejas_patil_0303"
+    },
+    {
+      name: "Prathmesh S Uchit",
       role: "Co-Founder & CEO",
       image: prathmesh,
       bio: "Technology visionary with expertise in full-stack development and digital transformation. Leads strategic direction and client relationships.",
@@ -21,12 +29,12 @@ const About = () => {
       instagram: "https://www.instagram.com/the_serious_bleck"
     },
     {
-      name: "Tejas Surse",
-      role: "Co-Founder & CTO",
-      image: tejas,
-      bio: "Technical architect specializing in scalable solutions and innovative web technologies. Oversees all technical operations and R&D.",
-      linkedin: "https://www.linkedin.com/in/tejas-surse-a1b651256/",
-      instagram: "https://www.instagram.com/tejas_patil_0303"
+      name: "Gauri B Kapadnis",
+      role: "HR Manager",
+      image: Gauri,
+      bio: "Human Resources Manager with a focus on talent acquisition and employee engagement. Ensures a positive work environment and team cohesion.",
+      linkedin: "https://www.linkedin.com/in/gauri-kapadnis-0321b527b/",
+      instagram: "https://www.instagram.com/got_2712"
     }
   ];
 
@@ -38,12 +46,7 @@ const About = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-magic-gold/10 rounded-full filter blur-[120px] animate-pulse-subtle" />
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-center max-w-3xl mx-auto"
-          >
+          <div className="text-center max-w-3xl mx-auto">
             <div className="inline-block px-3 py-1 rounded-full bg-magic-gold/10 mb-3">
               <span className="text-magic-gold text-sm font-medium flex items-center justify-center">
                 <Users className="h-3.5 w-3.5 mr-1" />
@@ -64,13 +67,7 @@ const About = () => {
       <section className="py-16 md:py-24 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
+            <div className="relative">
               <div className="absolute -top-6 -left-6 w-12 h-12 bg-magic-gold/20 rounded-full flex items-center justify-center z-10">
                 <BookOpen className="w-6 h-6 text-magic-gold" />
               </div>
@@ -86,12 +83,7 @@ const About = () => {
               </div>
             </div>
             
-            <div div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <div className="inline-block px-3 py-1 rounded-full bg-magic-accent/10 mb-3">
                 <span className="text-magic-accent text-sm font-medium">Our Journey</span>
               </div>
@@ -140,84 +132,62 @@ const About = () => {
               { number: "8", label: "Technical Experts" },
               { number: "100%", label: "Client Retention" }
             ].map((stat, index) => (
-              < div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="glass-card rounded-xl p-8 text-center"
-              >
+              <div key={index} className="glass-card rounded-xl p-8 text-center">
                 <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">{stat.number}</div>
                 <div className="text-magic-light/80">{stat.label}</div>
-              </ div>
+              </div>
             ))}
           </div>
         </div>
       </section>
       
       {/* Team Section */}
-      <section className="py-20 md:py-28 px-6">
+      <section className="py-20 px-6 bg-magic-dark">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            < div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-              className="inline-block px-3 py-1 rounded-full bg-magic-gold/10 mb-3"
-            >
+            <div className="inline-block px-4 py-2 rounded-full bg-magic-gold/10 mb-4">
               <span className="text-magic-gold text-sm font-medium flex items-center justify-center">
-                <Users className="h-3.5 w-3.5 mr-1" />
-                Leadership Team
+                <Users className="h-4 w-4 mr-2" />
+                Our Leadership Team
               </span>
-            </ div>
-            < h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
-            >
-              Meet the <span className="text-gradient">Founders</span>
-            </ h2>
-            < p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-magic-light/80 text-lg max-w-2xl mx-auto"
-            >
-              Our leadership combines technical expertise with business strategy to deliver exceptional results.
-            </ p>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Meet The <span className="text-transparent bg-clip-text bg-gradient-to-r from-magic-gold to-magic-accent">Visionaries</span>
+            </h2>
+            <p className="text-magic-light/80 text-lg max-w-3xl mx-auto">
+              The passionate minds driving innovation and excellence at our company.
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          {/* Team Grid with Larger Circles */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-4">
             {team.map((member, index) => (
-              < div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="glass-card rounded-xl  group relative"
+              <div 
+                key={index} 
+                className="flex flex-col items-center"
               >
-                <div className="relative h-85 border-b-2 border-magic-gold overflow-hidden rounded-t-xl">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full overflow-hidden object-cover object-center  duration-500 group-hover:scale-105"
+                {/* Large Circular Image Container */}
+                <div className="relative h-80 w-80 mb-10 overflow-hidden rounded-xl border-4 border-magic-gold/40 hover:border-magic-gold transition-all duration-300 shadow-lg">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="absolute inset-0 w-full h-full    object-scale-down"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t"></div>
+                </div>
+                
+                {/* Content */}
+                <div className="text-center max-w-xs">
+                  <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
+                  <p className="text-magic-gold text-md mb-4">{member.role}</p>
+                  <p className="text-magic-light/70 text-sm mb-6">{member.bio}</p>
                   
                   {/* Social Links */}
-                  <div className="absolute bottom-4 left-4 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex justify-center gap-4">
                     <a 
                       href={member.linkedin} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-magic-dark/80 hover:bg-linkedin-blue p-2 rounded-full transition-all duration-300 hover:scale-110"
+                      className="p-3 bg-magic-dark rounded-full hover:bg-linkedin-blue transition-colors"
                       aria-label={`Connect with ${member.name} on LinkedIn`}
                     >
                       <Linkedin className="h-5 w-5 text-white" />
@@ -226,75 +196,42 @@ const About = () => {
                       href={member.instagram} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-magic-dark/80 hover:bg-instagram-purple p-2 rounded-full transition-all duration-300 hover:scale-110"
+                      className="p-3 bg-magic-dark rounded-full hover:bg-instagram-purple transition-colors"
                       aria-label={`Follow ${member.name} on Instagram`}
                     >
                       <Instagram className="h-5 w-5 text-white" />
                     </a>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-1">{member.name}</h3>
-                  <div className="text-magic-gold text-sm mb-3">{member.role}</div>
-                  <p className="text-magic-light/80 text-sm">{member.bio}</p>
-                </div>
-              </ div>
+              </div>
             ))}
           </div>
         </div>
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 md:py-32 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-magic-dark opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-br from-magic-accent/20 via-transparent to-magic-gold/10" />
-        
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          < div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="inline-block px-3 py-1 rounded-full bg-magic-gold/10 mb-3"
-          >
+      <section className="py-20 px-6 bg-gradient-to-br from-magic-dark to-magic-darker">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="inline-block px-4 py-2 rounded-full bg-magic-gold/10 mb-4">
             <span className="text-magic-gold text-sm font-medium flex items-center justify-center">
-              <Sparkles className="h-3.5 w-3.5 mr-1" />
-              Let's Collaborate
+              <Sparkles className="h-4 w-4 mr-2" />
+              Get In Touch
             </span>
-          </ div>
+          </div>
           
-          < h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-white mb-6"
-          >
-            Ready to <span className="text-gradient-gold">Transform Your Business?</span>
-          </ h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready To <span className="text-transparent bg-clip-text bg-gradient-to-r from-magic-gold to-magic-accent">Work Together?</span>
+          </h2>
           
-          < p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-magic-light/90 text-lg md:text-xl max-w-3xl mx-auto mb-10"
-          >
-            Schedule a consultation with our team to discuss how we can help you achieve your digital goals.
-          </ p>
+          <p className="text-magic-light/90 text-lg mb-8 max-w-3xl mx-auto">
+            Let's discuss how we can help you achieve your business goals.
+          </p>
           
-          < div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <Link to="/contact">
-              <Button className="bg-magic-gold hover:bg-magic-gold/90 text-magic-dark px-8 py-6 text-lg font-medium rounded-full shadow-lg shadow-magic-gold/20 hover:shadow-xl hover:shadow-magic-gold/30 transition-all duration-300">
-                Get in Touch
-              </Button>
-            </Link>
-          </ div>
+          <Link to="/contact">
+            <Button className="bg-magic-gold hover:bg-magic-gold/90 text-magic-dark px-10 py-6 text-lg font-medium rounded-full shadow-lg hover:shadow-xl transition-all">
+              Contact Us
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
