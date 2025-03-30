@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Users, Award, BookOpen, Briefcase, Lightbulb, Heart, Sparkles, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -86,7 +86,7 @@ const About = () => {
               </div>
             </div>
             
-            <motion.div
+            <div div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
@@ -125,7 +125,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -140,7 +140,7 @@ const About = () => {
               { number: "8", label: "Technical Experts" },
               { number: "100%", label: "Client Retention" }
             ].map((stat, index) => (
-              <motion.div
+              < div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -150,7 +150,7 @@ const About = () => {
               >
                 <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">{stat.number}</div>
                 <div className="text-magic-light/80">{stat.label}</div>
-              </motion.div>
+              </ div>
             ))}
           </div>
         </div>
@@ -160,7 +160,7 @@ const About = () => {
       <section className="py-20 md:py-28 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <motion.div
+            < div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
@@ -171,8 +171,8 @@ const About = () => {
                 <Users className="h-3.5 w-3.5 mr-1" />
                 Leadership Team
               </span>
-            </motion.div>
-            <motion.h2
+            </ div>
+            < h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
@@ -180,8 +180,8 @@ const About = () => {
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
             >
               Meet the <span className="text-gradient">Founders</span>
-            </motion.h2>
-            <motion.p
+            </ h2>
+            < p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
@@ -189,12 +189,12 @@ const About = () => {
               className="text-magic-light/80 text-lg max-w-2xl mx-auto"
             >
               Our leadership combines technical expertise with business strategy to deliver exceptional results.
-            </motion.p>
+            </ p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {team.map((member, index) => (
-              <motion.div
+              < div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -238,7 +238,7 @@ const About = () => {
                   <div className="text-magic-gold text-sm mb-3">{member.role}</div>
                   <p className="text-magic-light/80 text-sm">{member.bio}</p>
                 </div>
-              </motion.div>
+              </ div>
             ))}
           </div>
         </div>
@@ -250,7 +250,7 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-magic-accent/20 via-transparent to-magic-gold/10" />
         
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <motion.div
+          < div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -261,9 +261,9 @@ const About = () => {
               <Sparkles className="h-3.5 w-3.5 mr-1" />
               Let's Collaborate
             </span>
-          </motion.div>
+          </ div>
           
-          <motion.h2
+          < h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
@@ -271,9 +271,9 @@ const About = () => {
             className="text-3xl md:text-5xl font-bold text-white mb-6"
           >
             Ready to <span className="text-gradient-gold">Transform Your Business?</span>
-          </motion.h2>
+          </ h2>
           
-          <motion.p
+          < p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -281,9 +281,9 @@ const About = () => {
             className="text-magic-light/90 text-lg md:text-xl max-w-3xl mx-auto mb-10"
           >
             Schedule a consultation with our team to discuss how we can help you achieve your digital goals.
-          </motion.p>
+          </ p>
           
-          <motion.div
+          < div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -294,7 +294,7 @@ const About = () => {
                 Get in Touch
               </Button>
             </Link>
-          </motion.div>
+          </ div>
         </div>
       </section>
     </div>
