@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import PD from "./Assets/punnyaiDeveloper.mp4"
-import SB from "./Assets/shubhmrutDeveloper.mp4"
-import P1 from "./Assets/p1.mp4"
+import PD from "../Assets/punnyaiDeveloper"
+import SB from "../Assets/shubhmrutDeveloper"
+import P1 from "../Assets/P1"
 const OurWorkPage = () => {
   const projects = [
     {
