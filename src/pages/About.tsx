@@ -99,7 +99,7 @@ const About = () => {
                 From Concept to <span className="text-gradient">Industry Leadership</span>
               </h2>
               <p className="text-magic-light/80 text-lg mb-5">
-                Founded in 2023, Shivayan Enterprises began with a vision to bridge the gap between technology and business needs. What started as a two-person operation has grown into a respected digital solutions provider.
+                Founded in 2025, Shivayan Enterprises began with a vision to bridge the gap between technology and business needs. What started as a two-person operation has grown into a respected digital solutions provider.
               </p>
               <p className="text-magic-light/80 text-lg mb-8">
                 Our approach combines technical excellence with business acumen, delivering solutions that not only look impressive but drive measurable results for our clients across various industries.

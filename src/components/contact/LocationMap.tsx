@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const LocationMap = () => {
   return (
     <div className="mt-10">
-      <h2 className="text-2xl font-bold text-white mb-6">
+      {/* <h2 className="text-2xl font-bold text-white mb-6">
         Find Us
       </h2>
       <div className="glass-card rounded-xl overflow-hidden h-[300px] relative">
@@ -18,7 +18,7 @@ const LocationMap = () => {
           className="grayscale opacity-80"
           title="Our location"
         ></iframe>
-      </div>
+      </div> */}
     </div>
   );
 };

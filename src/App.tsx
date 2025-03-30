@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,8 +12,9 @@ import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MagicBackground from "./components/MagicBackground";
-import OurWorkPage from "./pages/OurWorkPage"
-import { Analytics } from "@vercel/analytics/react"
+import OurWorkPage from "./pages/OurWorkPage";
+import { Analytics } from "@vercel/analytics/react";
+
 const queryClient = new QueryClient();
 
 // Scroll to top on route change
@@ -59,6 +59,7 @@ const AppContent = () => {
         </Routes>
       </main>
       <Footer />
+      <Analytics /> {/* Add Vercel Analytics here */}
     </div>
   );
 };

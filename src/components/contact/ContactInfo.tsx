@@ -16,9 +16,9 @@ const ContactInfo = () => {
           <div>
             <h3 className="text-white font-semibold mb-1">Our Office</h3>
             <p className="text-magic-light/70">
-              123 Magic Lane<br />
-              Tech City, CA 94107<br />
-              United States
+              CTSE Department,
+              Csmss chh shahu college of Engineering ,
+              kanchan wadi ,chh sambhaji nagar
             </p>
           </div>
         </div>
@@ -30,8 +30,7 @@ const ContactInfo = () => {
           <div>
             <h3 className="text-white font-semibold mb-1">Email Us</h3>
             <p className="text-magic-light/70">
-              hello@shivayan.com<br />
-              support@shivayan.com
+             Contact.shivayan@gmail.com<br />
             </p>
           </div>
         </div>
@@ -43,8 +42,7 @@ const ContactInfo = () => {
           <div>
             <h3 className="text-white font-semibold mb-1">Call Us</h3>
             <p className="text-magic-light/70">
-              +1 (555) 123-4567<br />
-              +1 (555) 987-6543
+              +919699925064
             </p>
           </div>
         </div>
