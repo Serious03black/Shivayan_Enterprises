@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import { Wand2, Rocket, Stars, Shield, Code, Sparkles } from 'lucide-react';
 import ThreeScene from '../components/ThreeScene';
 import HeroSection from '../components/HeroSection';
@@ -69,7 +69,7 @@ const Index = () => {
         <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-magic-accent/5 to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16 md:mb-20">
-            <motion.div
+            < div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
@@ -79,23 +79,23 @@ const Index = () => {
                 <Sparkles className="h-3.5 w-3.5 mr-1" />
                 Our Magical Approach
               </span>
-            </motion.div>
-            <motion.h2
+            </ div>
+            < h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
             >
               Why Choose <span className="text-gradient">MagicDev</span>
-            </motion.h2>
-            <motion.p
+            </ h2>
+            < p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-magic-light/80 text-lg max-w-2xl mx-auto"
             >
               We combine magical creativity with technical excellence to deliver web solutions that exceed expectations.
-            </motion.p>
+            </ p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -131,7 +131,7 @@ const Index = () => {
                 description: "Cutting-edge technology solutions that keep your business ahead of the competition."
               }
             ].map((feature, index) => (
-              <motion.div
+              < div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -148,7 +148,7 @@ const Index = () => {
                 <p className="text-magic-light/70">
                   {feature.description}
                 </p>
-              </motion.div>
+              </ div>
             ))}
           </div>
         </div>

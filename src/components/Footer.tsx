@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Github, Twitter, Linkedin, Facebook, Instagram, ChevronRight, Wand2 } from "lucide-react";
 import SparkleEffect from "./SparkleEffect";
 
@@ -26,7 +26,7 @@ const Footer = () => {
               Transforming ideas into magical digital experiences with cutting-edge web development solutions.
             </p>
             <div className="flex space-x-4">
-              {/* <motion.a 
+              {/* < a 
                 href="/" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -34,8 +34,8 @@ const Footer = () => {
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-magic-light hover:bg-white/20 transition-colors duration-300"
               >
                 <Twitter size={16} />
-              </motion.a> */}
-              <motion.a 
+              </ a> */}
+              < a 
                 href="/" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -43,8 +43,8 @@ const Footer = () => {
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-magic-light hover:bg-white/20 transition-colors duration-300"
               >
                 <Facebook size={16} />
-              </motion.a>
-              <motion.a 
+              </ a>
+              < a 
                 href="https://www.instagram.com/shivayan.enterprises" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -52,8 +52,8 @@ const Footer = () => {
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-magic-light hover:bg-white/20 transition-colors duration-300"
               >
                 <Instagram size={16} />
-              </motion.a>
-              <motion.a 
+              </ a>
+              < a 
                 href="https://www.linkedin.com/company/106444127/admin/dashboard/" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -61,8 +61,8 @@ const Footer = () => {
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-magic-light hover:bg-white/20 transition-colors duration-300"
               >
                 <Linkedin size={16} />
-              </motion.a>
-              <motion.a 
+              </ a>
+              < a 
                 href="https://github.com/shivayan_Enterprises" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -70,7 +70,7 @@ const Footer = () => {
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-magic-light hover:bg-white/20 transition-colors duration-300"
               >
                 <Github size={16} />
-              </motion.a>
+              </ a>
             </div>
           </div>
           

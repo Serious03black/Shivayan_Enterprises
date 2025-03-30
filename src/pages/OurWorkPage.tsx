@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
+// import { motion } from 'framer-motion';
+// import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import PD from "../Assets/punnyaiDeveloper.mp4"
 import SB from "../Assets/shubhmrutDeveloper.mp4"
@@ -39,26 +39,21 @@ const OurWorkPage = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-16">
-        <motion.div
+        < div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <Link to="/">
-            <Button variant="ghost" className="text-white hover:bg-gray-800">
-              <ArrowLeft className="mr-2" /> Back to Home
-            </Button>
-          </Link>
           <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-4">Our Recent Work</h1>
           <p className="text-xl text-gray-300 max-w-3xl">
             Explore our portfolio of innovative digital solutions that have transformed businesses
           </p>
-        </motion.div>
+        </ div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <motion.div
+            < div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -70,7 +65,6 @@ const OurWorkPage = () => {
                 <video
                   className="absolute top-0 left-0 w-full h-full object-cover"
                   controls
-                  autoPlay
                   muted
                   poster={`/project-${project.id}-thumb.jpg`}
                 >
@@ -89,7 +83,7 @@ const OurWorkPage = () => {
                   <span className="font-medium">Client:</span> {project.client}
                 </p>
               </div>
-            </motion.div>
+            </ div>
           ))}
         </div>
 
