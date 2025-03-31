@@ -12,9 +12,8 @@ import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MagicBackground from "./components/MagicBackground";
-import OurWorkPage from "./pages/OurWorkPage";
-import { Analytics } from "@vercel/analytics/react";
 
+// Create Query Client
 const queryClient = new QueryClient();
 
 // Scroll to top on route change
@@ -43,8 +42,19 @@ const AppWrapper = () => (
 
 // Main app content
 const AppContent = () => {
+  // Add base background color to prevent white flash
+  useEffect(() => {
+    // Ensure the body has the dark background color from the start
+    document.body.style.backgroundColor = "#1a1f2c";
+    
+    return () => {
+      // Reset on unmount
+      document.body.style.backgroundColor = "";
+    };
+  }, []);
+
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-[#1a1f2c]">
       <MagicBackground />
       <Navbar />
       <ScrollToTop />
@@ -54,12 +64,10 @@ const AppContent = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/ourWorkPage" element={<OurWorkPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
-      <Analytics /> 
     </div>
   );
 };

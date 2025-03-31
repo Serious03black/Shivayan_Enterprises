@@ -1,5 +1,4 @@
-
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const MagicBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -7,6 +6,7 @@ const MagicBackground = () => {
   const particlesRef = useRef<Particle[]>([]);
   const frameRef = useRef<number>(0);
   const mouseRef = useRef({ x: 0, y: 0 });
+  const [isLoaded, setIsLoaded] = useState(false);
 
   interface Particle {
     x: number;
@@ -38,22 +38,33 @@ const MagicBackground = () => {
       
       canvas.style.width = `${window.innerWidth}px`;
       canvas.style.height = `${window.innerHeight}px`;
+      
+      // Fill with initial background to prevent white flash
+      const gradient = ctx.createLinearGradient(0, 0, 0, window.innerHeight);
+      gradient.addColorStop(0, 'rgba(26, 31, 44, 1)');
+      gradient.addColorStop(1, 'rgba(15, 23, 42, 1)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
     };
 
     // Initialize particles
     const initParticles = () => {
       const particles: Particle[] = [];
-      const particleCount = Math.min(Math.max(window.innerWidth / 15, 50), 150);
+      // Reduce particle count on mobile for better performance
+      const isMobile = window.innerWidth < 768;
+      const particleCount = isMobile 
+        ? Math.min(Math.max(window.innerWidth / 30, 25), 60) 
+        : Math.min(Math.max(window.innerWidth / 15, 50), 150);
       
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * window.innerWidth,
           y: Math.random() * window.innerHeight,
-          size: Math.random() * 3 + 1,
-          speedX: Math.random() * 0.2 - 0.1,
-          speedY: Math.random() * 0.2 - 0.1,
+          size: Math.random() * 2 + 1, // Slightly smaller particles
+          speedX: Math.random() * 0.15 - 0.075, // Reduced speed
+          speedY: Math.random() * 0.15 - 0.075, // Reduced speed
           color: getRandomColor(),
-          alpha: Math.random() * 0.5 + 0.1,
+          alpha: Math.random() * 0.4 + 0.1, // Slightly reduced opacity
           isMoving: false,
           velX: 0,
           velY: 0
@@ -66,11 +77,11 @@ const MagicBackground = () => {
     // Generate a random color with a magical theme
     const getRandomColor = (): string => {
       const colors = [
-        'rgba(120, 105, 171, 0.6)',  // Purple
-        'rgba(112, 161, 255, 0.6)',  // Light Blue
-        'rgba(72, 123, 195, 0.6)',   // Medium Blue
-        'rgba(235, 248, 255, 0.5)',  // Very Light Blue
-        'rgba(249, 200, 70, 0.6)',   // Gold
+        'rgba(120, 105, 171, 0.5)',  // Purple (reduced opacity)
+        'rgba(112, 161, 255, 0.5)',  // Light Blue (reduced opacity)
+        'rgba(72, 123, 195, 0.5)',   // Medium Blue (reduced opacity)
+        'rgba(235, 248, 255, 0.4)',  // Very Light Blue (reduced opacity)
+        'rgba(249, 200, 70, 0.5)',   // Gold (reduced opacity)
       ];
       
       return colors[Math.floor(Math.random() * colors.length)];
@@ -99,12 +110,15 @@ const MagicBackground = () => {
         const dy = mouseRef.current.y - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         
-        if (distance < 120) {
+        // Reduce interaction radius on mobile
+        const interactionRadius = window.innerWidth < 768 ? 80 : 120;
+        
+        if (distance < interactionRadius) {
           const angle = Math.atan2(dy, dx);
-          const force = (120 - distance) / 120;
+          const force = (interactionRadius - distance) / interactionRadius;
           
-          particle.velX -= Math.cos(angle) * force * 0.2;
-          particle.velY -= Math.sin(angle) * force * 0.2;
+          particle.velX -= Math.cos(angle) * force * 0.15; // Reduced force
+          particle.velY -= Math.sin(angle) * force * 0.15; // Reduced force
           particle.isMoving = true;
         }
         
@@ -135,18 +149,22 @@ const MagicBackground = () => {
         }
         
         // Connect particles that are close to each other
+        // Reduced connection distance on mobile
+        const connectionDistance = window.innerWidth < 768 ? 70 : 100;
+        
         for (let j = index + 1; j < particlesRef.current.length; j++) {
           const otherParticle = particlesRef.current[j];
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 100) {
+          if (distance < connectionDistance) {
             if (contextRef.current) {
               contextRef.current.beginPath();
               contextRef.current.moveTo(particle.x, particle.y);
               contextRef.current.lineTo(otherParticle.x, otherParticle.y);
-              contextRef.current.strokeStyle = `rgba(235, 248, 255, ${0.03 * (1 - distance / 100)})`;
+              // Reduced opacity for connections
+              contextRef.current.strokeStyle = `rgba(235, 248, 255, ${0.02 * (1 - distance / connectionDistance)})`;
               contextRef.current.lineWidth = 0.5;
               contextRef.current.stroke();
             }
@@ -175,6 +193,7 @@ const MagicBackground = () => {
     setupCanvas();
     particlesRef.current = initParticles();
     frameRef.current = requestAnimationFrame(animate);
+    setIsLoaded(true);
     
     // Event listeners
     window.addEventListener('mousemove', handleMouseMove);
@@ -189,11 +208,16 @@ const MagicBackground = () => {
   }, []);
   
   return (
-    <canvas
-      ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
-      aria-hidden="true"
-    />
+    <>
+      {/* Fixed background color to prevent white flash during loading */}
+      <div className="fixed top-0 left-0 w-full h-full bg-[#1a1f2c] z-0" 
+           style={{ opacity: isLoaded ? 0 : 1, transition: 'opacity 0.5s ease' }} />
+      <canvas
+        ref={canvasRef}
+        className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
+        aria-hidden="true"
+      />
+    </>
   );
 };
 

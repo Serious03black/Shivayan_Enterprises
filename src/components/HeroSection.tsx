@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Wand2, X, Lightbulb, BarChart2, Rocket, Globe, Cpu, Zap, CircuitBoard, Cloud, Server } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -324,7 +323,6 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
       </div>
 
       {/* Idea Visualizer Modal */}
-      <AnimatePresence>
         {showIdeaVisualizer && (
           < div
             initial={{ opacity: 0 }}
@@ -458,7 +456,7 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
             </ div>
           </ div>
         )}
-      </AnimatePresence>
+    
     </section>
   );
 });
