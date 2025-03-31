@@ -30,7 +30,7 @@ const Navbar = () => {
         isScrolled ? "py-3" : "py-5"
       }`}
     >
-      <div className={`mx-auto max-w-7xl glass rounded-full border border-white/20 transition-all duration-500`}>
+      <div className={`mx-auto max-w-7xl glass rounded-2xl border border-white/20 transition-all duration-500`}>
         <div className="flex items-center justify-between px-4 md:px-8 py-3">
           <Link 
             to="/"

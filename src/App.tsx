@@ -12,7 +12,8 @@ import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import MagicBackground from "./components/MagicBackground";
-
+import OurWorkPage from "./pages/OurWorkPage";
+import { Analytics } from "@vercel/analytics/react";
 // Create Query Client
 const queryClient = new QueryClient();
 
@@ -64,10 +65,12 @@ const AppContent = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/OurWorkPage" element={<OurWorkPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
+      <Analytics /> 
     </div>
   );
 };
