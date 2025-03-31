@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Wand2, Menu, X, Sparkles } from "lucide-react";
 
 const Navbar = () => {
@@ -9,15 +8,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setIsScrolled(window.scrollY > 20);
-  //   };
-    
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-  
+
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);

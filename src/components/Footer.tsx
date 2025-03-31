@@ -2,12 +2,11 @@
 import { Link } from "react-router-dom";
 // import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Github, Twitter, Linkedin, Facebook, Instagram, ChevronRight, Wand2 } from "lucide-react";
-import SparkleEffect from "./SparkleEffect";
+
 
 const Footer = () => {
   return (
     <footer className="relative w-full glass-dark border-t border-white/10 pt-16 pb-8 overflow-hidden">
-      <SparkleEffect />
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {/* Company Info */}
