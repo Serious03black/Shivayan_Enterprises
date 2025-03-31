@@ -41,13 +41,10 @@ const ContactForm = () => {
 
   return (
     < div
-      initial={{ opacity: 0, x: -30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: true }}
-      className="glass-card rounded-xl p-8 md:p-10"
+      
+      className=""
     >
-      <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+      {/* <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
         Send Us a Message
       </h2>
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -133,7 +130,7 @@ const ContactForm = () => {
             </>
           )}
         </Button>
-      </form>
+      </form> */}
     </ div>
   );
 };
