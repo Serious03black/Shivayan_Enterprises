@@ -29,7 +29,7 @@ const ContactFaq = () => {
   return (
     <section className="py-20 px-6">
       <div className="max-w-4xl mx-auto">
-        <motion.div
+        < div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -42,11 +42,11 @@ const ContactFaq = () => {
           <p className="text-magic-light/80">
             Find answers to common questions about our services and process.
           </p>
-        </motion.div>
+        </ div>
         
         <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <motion.div
+            < div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ const ContactFaq = () => {
               <p className="text-magic-light/70">
                 {faq.answer}
               </p>
-            </motion.div>
+            </ div>
           ))}
         </div>
       </div>

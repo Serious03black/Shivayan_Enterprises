@@ -9,7 +9,7 @@ const ContactHero = () => {
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-magic-gold/10 rounded-full filter blur-[120px] animate-pulse-subtle" />
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <motion.div
+        < div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -27,7 +27,7 @@ const ContactHero = () => {
           <p className="text-magic-light/80 text-lg md:text-xl mb-8">
             Have a project in mind? Contact us today and let's discuss how we can help bring your vision to life.
           </p>
-        </motion.div>
+        </ div>
       </div>
     </section>
   );

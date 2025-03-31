@@ -139,7 +139,7 @@ const Services = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-magic-gold/10 rounded-full filter blur-[120px] animate-pulse-subtle" />
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
+          < div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -157,7 +157,7 @@ const Services = () => {
             <p className="text-magic-light/80 text-lg md:text-xl mb-8">
               We blend creativity with technical expertise to create extraordinary digital experiences that captivate and convert.
             </p>
-          </motion.div>
+          </ div>
         </div>
       </section>
       
@@ -165,7 +165,7 @@ const Services = () => {
       <section className="py-12 md:py-20 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <motion.div
+            < div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -195,7 +195,7 @@ const Services = () => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </ div>
           ))}
         </div>
       </section>
@@ -206,7 +206,7 @@ const Services = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-magic-accent/20 via-transparent to-magic-gold/10" />
         
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <motion.div
+          < div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -217,9 +217,9 @@ const Services = () => {
               <Sparkles className="h-3.5 w-3.5 mr-1" />
               Ready to Get Started?
             </span>
-          </motion.div>
+          </ div>
           
-          <motion.h2
+          < h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
@@ -227,9 +227,9 @@ const Services = () => {
             className="text-3xl md:text-5xl font-bold text-white mb-6"
           >
             Let's Bring Your <span className="text-gradient-gold">Vision to Life</span>
-          </motion.h2>
+          </ h2>
           
-          <motion.p
+          < p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -237,9 +237,9 @@ const Services = () => {
             className="text-magic-light/90 text-lg md:text-xl max-w-3xl mx-auto mb-10"
           >
             Contact us today to discuss your project and discover how our magical digital solutions can help your business grow.
-          </motion.p>
+          </ p>
           
-          <motion.div
+          < div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -250,7 +250,7 @@ const Services = () => {
                 Contact Us
               </Button>
             </Link>
-          </motion.div>
+          </ div>
         </div>
       </section>
     </div>

@@ -229,7 +229,7 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
 
       {/* Main content - Centered */}
       <div className="max-w-6xl mx-auto w-full z-20 text-center px-4 flex flex-col items-center justify-center min-h-screen">
-        <motion.div
+        < div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -238,7 +238,7 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
           {/* Static H1 centered on Earth */}
        
           {/* Dynamic H1 below Earth */}
-          <motion.span
+          < span
             ref={dynamicTextRef}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -246,10 +246,10 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-24 tech-text"
           >
             {/* Content set by useEffect */}
-          </motion.span>
+          </ span>
 
           {/* Dynamic Quotes below Dynamic H1 */}
-          <motion.span
+          < span
             ref={quoteRef}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -257,7 +257,7 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
             className="text-xl md:text-2xl text-gray-300 mt-6 quote-text"
           >
             {/* Content set by useEffect */}
-          </motion.span>
+          </ span>
 
           <p className="text-gray-300 text-xl md:text-2xl mt-10 mb-10 max-w-2xl">
             We transform visionary ideas into Revolutionary Growth
@@ -292,9 +292,9 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
     </Button>
   </Link>
 </div>
-        </motion.div>
+        </ div>
         {/* Tech feature grid */}
-        <motion.div
+        < div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
@@ -306,7 +306,7 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
             { icon: <CircuitBoard className="h-8 w-8 text-blue-400" />, title: "Modern Stack", desc: "Cutting-edge tech" },
             { icon: <Server className="h-8 w-8 text-blue-400" />, title: "Cloud Native", desc: "Scalable infrastructure" },
           ].map((feature, i) => (
-            <motion.div
+            < div
               key={i}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -318,21 +318,21 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
                 <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
                 <p className="text-gray-400 text-sm">{feature.desc}</p>
               </div>
-            </motion.div>
+            </ div>
           ))}
-        </motion.div>
+        </ div>
       </div>
 
       {/* Idea Visualizer Modal */}
       <AnimatePresence>
         {showIdeaVisualizer && (
-          <motion.div
+          < div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4"
           >
-            <motion.div
+            < div
               initial={{ scale: 0.9, y: 50 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 50 }}
@@ -455,8 +455,8 @@ const HeroSection = forwardRef<HTMLElement>((props, ref) => {
                   </div>
                 </div>
               )}
-            </motion.div>
-          </motion.div>
+            </ div>
+          </ div>
         )}
       </AnimatePresence>
     </section>

@@ -20,34 +20,34 @@ const NotFound = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-magic-dark via-magic-dark to-magic-accent/10" />
       
       <div className="relative z-10 max-w-lg mx-auto px-6 text-center">
-        <motion.div
+        < div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className="mb-6"
         >
           <div className="text-9xl font-bold text-gradient">404</div>
-        </motion.div>
+        </ div>
         
-        <motion.h1
+        < h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-3xl md:text-4xl font-bold text-white mb-4"
         >
           Page Not Found
-        </motion.h1>
+        </ h1>
         
-        <motion.p
+        < p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-magic-light/80 text-lg mb-8"
         >
           The page you're looking for doesn't seem to exist or has been moved.
-        </motion.p>
+        </ p>
         
-        <motion.div
+        < div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -67,7 +67,7 @@ const NotFound = () => {
             <ArrowLeft className="h-4 w-4" />
             <span>Go Back</span>
           </Button>
-        </motion.div>
+        </ div>
       </div>
     </div>
   );

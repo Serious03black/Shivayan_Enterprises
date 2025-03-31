@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-// import { motion } from 'framer-motion';
 import { Wand2, Rocket, Stars, Shield, Code, Sparkles } from 'lucide-react';
 import ThreeScene from '../components/ThreeScene';
 import HeroSection from '../components/HeroSection';

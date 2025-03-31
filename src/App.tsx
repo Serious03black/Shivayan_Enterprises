@@ -59,7 +59,7 @@ const AppContent = () => {
         </Routes>
       </main>
       <Footer />
-      <Analytics /> {/* Add Vercel Analytics here */}
+      <Analytics /> 
     </div>
   );
 };
