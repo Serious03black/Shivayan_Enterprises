@@ -132,8 +132,14 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-magic-gold flex-shrink-0" />
-                <span className="text-magic-light/70">contact.Shivayan@gmail.com</span>
-              </li>
+                <a 
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.shivayan@gmail.com" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="text-magic-light/70"
+>
+  contact.shivayan@gmail.com
+</a>           </li>
             </ul>
           </div>
         </div>
