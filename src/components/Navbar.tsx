@@ -51,8 +51,8 @@ const Navbar = () => {
               <span className="absolute inset-0 bg-gradient-to-br from-magic-gold/80 to-orange-300/80 rounded-full blur-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300"></span>
             </ div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-white">Shivayan</span>
-              <span className="text-xs text-magic-light/80 -mt-1">Web Consultancy</span>
+              <span className="text-lg font-bold text-white">Shivayan Enterprises</span>
+              <span className="text-xs text-magic-light/80 -mt-1">Web, App Developemnt  </span>
             </div>
           </Link>
           
