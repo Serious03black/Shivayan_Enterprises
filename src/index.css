@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Martel:wght@400;700;900&family=Hind:wght@400;500;600;700&family=Parisienne&family=Great+Vibes&family=Yatra+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 43% 97%;
+    --foreground: 260 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 10% 10%;
+
+    --primary: 260 45% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 100% 50%;
+    --secondary-foreground: 260 10% 10%;
+
+    --muted: 260 10% 90%;
+    --muted-foreground: 260 10% 40%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 260 10% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 10% 85%;
+    --input: 260 10% 85%;
+    --ring: 260 45% 55%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 260 20% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 260 20% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 260 20% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 260 45% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 100% 50%;
+    --secondary-foreground: 260 10% 10%;
+
+    --muted: 260 20% 20%;
+    --muted-foreground: 260 10% 70%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 260 10% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 260 20% 25%;
+    --input: 260 20% 25%;
+    --ring: 260 45% 55%;
+    
+    --sidebar-background: 240 20% 12%;
+    --sidebar-foreground: 240 10% 90%;
+    --sidebar-primary: 260 45% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 20% 18%;
+    --sidebar-accent-foreground: 240 10% 90%;
+    --sidebar-border: 240 20% 25%;
+    --sidebar-ring: 260 45% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans scroll-smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  .text-gradient-purple-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-shivayan-purple to-shivayan-gold animate-gradient-flow;
+    background-size: 200% 200%;
+  }
+
+  .text-gradient-orange-yellow {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-shivayan-orange to-shivayan-yellow animate-gradient-flow;
+    background-size: 200% 200%;
+  }
+
+  .text-gradient-cyan-purple {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-shivayan-cyan to-shivayan-purple animate-gradient-flow;
+    background-size: 200% 200%;
+  }
+
+  .hero-gradient {
+    @apply bg-gradient-to-br from-shivayan-purple via-shivayan-dark-purple to-shivayan-gold animate-gradient-flow;
+    background-size: 200% 200%;
+  }
+
+  .card-hover-effect {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-shivayan-gold after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .btn-gradient {
+    @apply bg-gradient-to-r from-shivayan-gold to-shivayan-orange hover:from-shivayan-orange hover:to-shivayan-gold transition-all duration-500 text-shivayan-dark-purple font-bold;
+  }
+
+  .content-section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold mb-8 relative after:absolute after:bottom-0 after:left-0 after:w-24 after:h-1 after:bg-shivayan-gold;
+  }
+  
+  /* Multilingual typography classes */
+  .text-cursive {
+    @apply font-cursive;
+  }
+  
+  .text-calligraphy {
+    @apply font-calligraphy;
+  }
+  
+  .text-marathi {
+    @apply font-marathi;
+  }
+  
+  .text-hindi {
+    @apply font-hindi;
+  }
+  
+  .text-decorative {
+    @apply font-decorative;
+  }
+}
+
